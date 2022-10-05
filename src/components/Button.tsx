@@ -9,11 +9,13 @@ const styles:React.CSSProperties[]=[
 export const Button = () => {
     const [flag,setFlag]=useState<number>(0);
     const [style,setStyle]=useState<React.CSSProperties>(styles[0]);
+    const [message,setMessage]=useState<string>('Hey');
     const handleClick=()=>{
         switch(flag){
             case 0:
                 setFlag(1);
                 setStyle(styles[flag]);
+                setMessage('Nice');
                 break;
             case 1:
                 setFlag(2);
@@ -30,6 +32,6 @@ export const Button = () => {
         }
     };
     return(
-        <button style={style} onClick={handleClick}>Hey</button>
+        <button style={style} onClick={handleClick}>{message}</button>
     );
 }
